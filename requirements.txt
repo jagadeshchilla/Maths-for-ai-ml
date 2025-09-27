@@ -1,0 +1,18 @@
+# Core data science packages
+numpy
+pandas
+scipy
+
+# Machine learning and datasets
+scikit-learn
+
+# Jupyter notebook support
+jupyter
+ipykernel
+
+# Visualization (commonly used with statistics)
+matplotlib
+seaborn
+
+# Additional statistical packages
+statsmodels
