@@ -10,59 +10,93 @@ This document provides a comprehensive overview of linear algebra concepts with 
 A **vector** is an ordered collection of numbers representing a point, direction, or quantity in space.
 
 ### Definition
-A vector $\mathbf{v}$ in $\mathbb{R}^n$ is an ordered $n$-tuple:
-$$\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix} = (v_1, v_2, \ldots, v_n)$$
+A vector **v** in ℝⁿ is an ordered n-tuple:
+
+```
+v = [v₁, v₂, ..., vₙ]ᵀ = (v₁, v₂, ..., vₙ)
+```
+
+**Column vector notation:**
+```
+v = [v₁]
+    [v₂]
+    [⋮]
+    [vₙ]
+```
 
 ### Basic Properties
-- **Notation:** $\mathbf{v} = [v_1, v_2, \ldots, v_n]$ or $\mathbf{v} = (v_1, v_2, \ldots, v_n)$
+- **Notation:** **v** = [v₁, v₂, ..., vₙ] or **v** = (v₁, v₂, ..., vₙ)
 - **Dimension:** number of components (2D, 3D, n-dimensional)
 - **Geometric meaning:** points to a direction and has magnitude
-- **Zero vector:** $\mathbf{0} = [0, 0, \ldots, 0]^T$
+- **Zero vector:** **0** = [0, 0, ..., 0]ᵀ
 
 ### Vector Operations
 
 #### Addition
-For vectors $\mathbf{v} = [v_1, v_2, \ldots, v_n]^T$ and $\mathbf{w} = [w_1, w_2, \ldots, w_n]^T$:
-$$\mathbf{v} + \mathbf{w} = \begin{bmatrix} v_1 + w_1 \\ v_2 + w_2 \\ \vdots \\ v_n + w_n \end{bmatrix}$$
+For vectors **v** = [v₁, v₂, ..., vₙ]ᵀ and **w** = [w₁, w₂, ..., wₙ]ᵀ:
+
+```
+v + w = [v₁ + w₁]
+        [v₂ + w₂]
+        [  ⋮   ]
+        [vₙ + wₙ]
+```
 
 **Properties:**
-- **Commutative:** $\mathbf{v} + \mathbf{w} = \mathbf{w} + \mathbf{v}$
-- **Associative:** $(\mathbf{u} + \mathbf{v}) + \mathbf{w} = \mathbf{u} + (\mathbf{v} + \mathbf{w})$
-- **Identity:** $\mathbf{v} + \mathbf{0} = \mathbf{v}$
+- **Commutative:** v + w = w + v
+- **Associative:** (u + v) + w = u + (v + w)
+- **Identity:** v + 0 = v
 
 #### Scalar Multiplication
-For scalar $c$ and vector $\mathbf{v}$:
-$$c\mathbf{v} = \begin{bmatrix} cv_1 \\ cv_2 \\ \vdots \\ cv_n \end{bmatrix}$$
+For scalar c and vector **v**:
+
+```
+cv = [cv₁]
+     [cv₂]
+     [ ⋮ ]
+     [cvₙ]
+```
 
 **Properties:**
-- **Associative:** $(ab)\mathbf{v} = a(b\mathbf{v})$
-- **Distributive:** $a(\mathbf{v} + \mathbf{w}) = a\mathbf{v} + a\mathbf{w}$
-- **Distributive:** $(a + b)\mathbf{v} = a\mathbf{v} + b\mathbf{v}$
+- **Associative:** (ab)v = a(bv)
+- **Distributive:** a(v + w) = av + aw
+- **Distributive:** (a + b)v = av + bv
 
 #### Dot Product (Inner Product)
-For vectors $\mathbf{v}$ and $\mathbf{w}$:
-$$\mathbf{v} \cdot \mathbf{w} = \sum_{i=1}^{n} v_i w_i = v_1w_1 + v_2w_2 + \cdots + v_nw_n$$
+For vectors **v** and **w**:
+
+```
+v · w = v₁w₁ + v₂w₂ + ... + vₙwₙ = Σᵢ₌₁ⁿ vᵢwᵢ
+```
 
 **Geometric interpretation:**
-$$\mathbf{v} \cdot \mathbf{w} = |\mathbf{v}||\mathbf{w}|\cos(\theta)$$
-where $\theta$ is the angle between vectors.
+```
+v · w = |v||w|cos(θ)
+```
+where θ is the angle between vectors.
 
 **Properties:**
-- **Commutative:** $\mathbf{v} \cdot \mathbf{w} = \mathbf{w} \cdot \mathbf{v}$
-- **Distributive:** $\mathbf{u} \cdot (\mathbf{v} + \mathbf{w}) = \mathbf{u} \cdot \mathbf{v} + \mathbf{u} \cdot \mathbf{w}$
-- **Scalar multiplication:** $(c\mathbf{v}) \cdot \mathbf{w} = c(\mathbf{v} \cdot \mathbf{w})$
+- **Commutative:** v · w = w · v
+- **Distributive:** u · (v + w) = u · v + u · w
+- **Scalar multiplication:** (cv) · w = c(v · w)
 
 #### Vector Magnitude (Norm)
-The **Euclidean norm** (or magnitude) of vector $\mathbf{v}$:
-$$|\mathbf{v}| = \sqrt{\mathbf{v} \cdot \mathbf{v}} = \sqrt{v_1^2 + v_2^2 + \cdots + v_n^2}$$
+The **Euclidean norm** (or magnitude) of vector **v**:
+
+```
+|v| = √(v · v) = √(v₁² + v₂² + ... + vₙ²)
+```
 
 #### Unit Vector
-A **unit vector** in the direction of $\mathbf{v}$:
-$$\hat{\mathbf{v}} = \frac{\mathbf{v}}{|\mathbf{v}|}$$
+A **unit vector** in the direction of **v**:
+
+```
+v̂ = v/|v|
+```
 
 **Properties:**
-- $|\hat{\mathbf{v}}| = 1$
-- $\hat{\mathbf{v}}$ points in the same direction as $\mathbf{v}$
+- |v̂| = 1
+- v̂ points in the same direction as v
 
 ### Applications
 - **Physics:** Force, velocity, acceleration vectors
